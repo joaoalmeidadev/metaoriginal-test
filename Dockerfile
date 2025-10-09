@@ -51,8 +51,8 @@
   # Precompile bootsnap
   RUN bundle exec bootsnap precompile app/ lib/
   
-  # Precompile assets with dummy secret key
-  RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+  RUN bundle exec rails assets:precompile
+
   
   # -------------------------
   # Final image
