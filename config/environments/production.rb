@@ -3,6 +3,8 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.action_cable.mount_path = nil
+  
   config.require_master_key = false
   # Code is not reloaded between requests.
   config.enable_reloading = false
@@ -12,7 +14,7 @@ Rails.application.configure do
 
   # Full error reports are disabled.
   config.consider_all_requests_local = false
-
+  
   # Turn on fragment caching in view templates.
   config.action_controller.perform_caching = true
 
