@@ -1,0 +1,27 @@
+<div class="flex-1 flex items-end px-8 pb-16">
+  <div class="max-w-2xl transition-all duration-700 ease-in-out" data-projects-dashboard-target="projectInfo">
+    
+    <div class="mb-6">
+      <h2 class="text-white text-3xl font-bold tracking-tight leading-none mb-2" data-projects-dashboard-target="projectTitle">
+        <%= @projects.first[:title].split(":" ).first.upcase %>
+      </h2>
+      <h3 class="text-white text-4xl font-bold italic tracking-tight" data-projects-dashboard-target="projectSubtitle">
+        <%= @projects.first[:subtitle] %>
+      </h3>
+    </div>
+
+    <p class="text-white text-2xl font-light mb-8 tracking-wide" data-projects-dashboard-target="projectTagline">
+      <%= @projects.first[:subtitle] %>
+    </p>
+
+    <!-- Action Buttons -->
+    <div class="flex items-center space-x-4">
+      <button class="bg-white hover:bg-gray-200 text-black font-bold text-xl px-16 py-4 rounded-full transition-all duration-300 shadow-2xl hover:scale-105 flex items-center space-x-3">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+        <span>Navigate</span>
+      </button>
+    </div>
+  </div>
+</div>

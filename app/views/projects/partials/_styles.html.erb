@@ -1,0 +1,36 @@
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Custom selection animations */
+  @keyframes selectionPulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.1);
+    }
+  }
+  
+  @keyframes selectionGlow {
+    0%, 100% {
+      filter: brightness(1.1) saturate(1.1);
+    }
+    50% {
+      filter: brightness(1.2) saturate(1.2);
+    }
+  }
+  
+  .project-selected {
+    animation: selectionPulse 2s ease-in-out infinite;
+  }
+  
+  .project-selected img {
+    animation: selectionGlow 2s ease-in-out infinite;
+  }
+</style>
