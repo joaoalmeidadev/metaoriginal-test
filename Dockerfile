@@ -50,8 +50,6 @@
   
   # Precompile bootsnap
   RUN bundle exec bootsnap precompile app/ lib/
-  
-  RUN bundle exec rails assets:precompile
 
   
   # -------------------------
