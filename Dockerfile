@@ -50,7 +50,7 @@
   
   # Precompile bootsnap
   RUN bundle exec bootsnap precompile app/ lib/
-
+  RUN bin/vite build
   
   # -------------------------
   # Final image
