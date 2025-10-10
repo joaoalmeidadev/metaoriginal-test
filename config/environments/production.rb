@@ -8,7 +8,7 @@ Rails.application.configure do
   config.require_master_key = false
   # Code is not reloaded between requests.
   config.enable_reloading = false
-  config.secret_key_base = Rails.application.credentials.secret_key_base
+  config.secret_key_base = "b7c579c515bc37d58437d78e37578b66178dca8ce59fa283b16855422ff03fb4450657b70fe1163b7c01d2d5111db9ed6af36d1a1b5caa0be0e29e053ad0a891"
   # Eager load code on boot for better performance and memory savings (ignored by Rake tasks).
   config.eager_load = true
 

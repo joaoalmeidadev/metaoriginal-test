@@ -11,15 +11,15 @@
   
   # Install system dependencies
   RUN apt-get update -qq && \
-      apt-get install --no-install-recommends -y \
+        apt-get install --no-install-recommends -y \
           curl \
           libjemalloc2 \
-          libvips \
-          sqlite3 \
+          libvips-dev \
           build-essential \
           git \
           libyaml-dev \
           pkg-config \
+          python3 \
           && rm -rf /var/lib/apt/lists/*
   
   # Install Node.js LTS + npm + Yarn 1
@@ -32,7 +32,8 @@
   ENV RAILS_ENV=production \
       BUNDLE_DEPLOYMENT=1 \
       BUNDLE_PATH=/usr/local/bundle \
-      BUNDLE_WITHOUT=development
+      BUNDLE_WITHOUT=development \
+      SECRET_KEY_BASE=dummykey123    
   
   # -------------------------
   # Build stage
@@ -49,7 +50,11 @@
   COPY . .
   
   # Precompile bootsnap
+
+  COPY package.json yarn.lock ./
   RUN bundle exec bootsnap precompile app/ lib/
+  RUN yarn install --frozen-lockfile
+  RUN bin/rails tailwindcss:build
   RUN bin/vite build
   
   # -------------------------
